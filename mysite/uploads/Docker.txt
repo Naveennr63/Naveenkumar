@@ -1,0 +1,41 @@
+----dockerfile---:dockerfile
+
+FROM ubuntu:latest
+
+LABEL "project"="Docker1"
+
+RUN apt update
+
+RUN apt install apache2 -y
+
+CMD ["/usr/sbin/apache2ctl","-D","FOREGROUND"]
+
+EXPOSE 80
+
+WORKDIR var/www/html
+
+VOLUME /var/log/apache2
+
+ADD pro.tar.gz /var/www/html
+
+----------
+
+      git clone  https://gitlab.com/Yokendrakumar1999/my_profile.git -b master
+     ls
+     cd my_profile
+      ls
+      tar -czvf my_profile.tar.gz *
+      mv my_profile.tar.gz ..
+docker build -t img:tag .
+    docker run -d --name docker_1 -p 80:80 img:tag
+   docker ps -a
+   
+
+      docker images
+      docker login
+      docker build -t yokendrakumar/my_profile:v1 .
+      docker images
+      docker push yokendrakumar/my_profile:v1
+      docker images
+      docker rmi
+      docker run -d --name my_profile -p 80:80 yokendrakumar/my_profile:v1

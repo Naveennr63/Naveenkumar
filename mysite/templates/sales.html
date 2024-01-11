@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="flex justify-between">
+    <div class="ml-10 mt-10 font-bold text-xl">Sales Status</div>
+    <div class="mr-20 mt-10">
+        <a class="bg-green-500 text-white px-2 py-4" href="{% url 'dashboard' %}">Dashboard</a>
+    </div>
+</div>
+<div class="shadow-lg p-10 m-5">
+    <div class="text-5xl font-bold">${{ total_sales.amount__sum }}</div>
+    <div class="mt-10">Your Lifetime Revenue</div>
+   
+</div>
+{% endblock %}
